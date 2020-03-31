@@ -26,14 +26,15 @@ namespace C_sharp_learning //name of project
                         Console.WriteLine("what is the dimensions row x columns");
                         rows = Convert.ToInt32(Console.ReadLine());
                         columns = Convert.ToInt32(Console.ReadLine());
-                        Matrix newMatrixName = new Matrix(rows, columns);
-                        Console.WriteLine("new matrix {0} created", newMatrixName);
-                        newMatrixName.PrintM();
+                        Matrix matrix = new Matrix(rows, columns);
+                        matrix.setName(newMatrixName);
+                        Console.WriteLine("new matrix {0} created", matrix.getName());
+                        matrix.PrintM();
                         break;
                     case "Sum Diagnals":
                         Console.WriteLine("What's the name of the matrix?");
                         string MatrixName = Console.ReadLine();
-                        Console.WriteLine(Convert.ToString(MatrixName.SummingDiagnals()));
+                        //Console.WriteLine(Convert.ToString(MatrixName.SummingDiagnals()));
                         break;
                     case "Quit":
                         running = false;
@@ -48,6 +49,7 @@ namespace C_sharp_learning //name of project
         int[,]m;
         int r;
         int c;
+        string name;
         public Matrix(int newR, int newC){
             r = newR;
             c = newC;
@@ -57,6 +59,12 @@ namespace C_sharp_learning //name of project
                     m[i,j]=0;
                 }
             }
+        }
+        public void setName(string NewName){
+            name = NewName;
+        }
+        public string getName(){
+            return name;
         }
         public void PrintM(){
             for(int i=0;i<r;i++){
