@@ -15,6 +15,31 @@ namespace C_sharp_learning //name of project
            M.PrintM();
            Console.WriteLine("Matrix Printed");
            Console.ReadLine();
+           bool running = true;
+           while(running){
+               Console.WriteLine("What would you like to do");
+               string option = Console.ReadLine();
+               switch(option){
+                   case "Create Matrix":
+                        Console.WriteLine("what is the matrix called?");
+                        string newMatrixName = Console.ReadLine();
+                        Console.WriteLine("what is the dimensions row x columns");
+                        rows = Convert.ToInt32(Console.ReadLine());
+                        columns = Convert.ToInt32(Console.ReadLine());
+                        Matrix newMatrixName = new Matrix(rows, columns);
+                        Console.WriteLine("new matrix {0} created", newMatrixName);
+                        newMatrixName.PrintM();
+                        break;
+                    case "Sum Diagnals":
+                        Console.WriteLine("What's the name of the matrix?");
+                        string MatrixName = Console.ReadLine();
+                        Console.WriteLine(Convert.ToString(MatrixName.SummingDiagnals()));
+                        break;
+                    case "Quit":
+                        running = false;
+                        break;
+               }
+           }
         }
     }
 
