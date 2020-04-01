@@ -4,27 +4,27 @@ namespace MatrixCalc
 {
     class Matrix
     {
-        int[,]m;
-        int r;
-        int c;
-        string name;
-        public Matrix(int newR, int newC){
-            r = newR;
-            c = newC;
-            m = new int[r,c];
-            for(int i=0;i<r;i++){
+        int[,]m; //creates empty matrix named m
+        int r; //number of rows
+        int c; //number of columns
+        string name; 
+        public Matrix(int newR, int newC){ //default constructor 
+            r = newR; //sets r
+            c = newC; //sets c 
+            m = new int[r,c]; //creates an rxc matrix
+            for(int i=0;i<r;i++){ //populates it with 0s
                 for(int j=0;j<c;j++){
                     m[i,j]=0;
                 }
             }
         }
-        public void setName(string NewName){
+        public void setName(string NewName){ //sets name of matrix
             name = NewName;
         }
-        public string getName(){
+        public string getName(){ //returns name of matrix
             return name;
         }
-        public void PrintM(){
+        public void PrintM(){ //prints matrix
             for(int i=0;i<r;i++){
                 Console.Write("\n[");
                 for(int j=0;j<c;j++){
@@ -34,7 +34,7 @@ namespace MatrixCalc
             }
             Console.Write('\n');
         }
-        public int SummingDiagnals()
+        public int SummingDiagnals() //sums numbers on the diagnal of an nxn matrix
         {
             int sum=0;
             if(r != c){
@@ -52,8 +52,8 @@ namespace MatrixCalc
                 Console.WriteLine("unknown error summing diagnals");
                 return -2;
             }
-        }
-        public void Populate(){
+        } 
+        public void Populate(){ //allows user to fill in integer values for the matrix
             for(int i =0; i<r;i++){
                 Console.WriteLine("enter the entries for row number {0} seperated by enter",i+1);
                 for(int j=0;j<c;j++){

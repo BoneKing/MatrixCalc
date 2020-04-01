@@ -4,14 +4,14 @@ using System.Collections.Generic;
 
 namespace MatrixCalc //name of project
 {
-    class Program //class that contains everything, since this is a very basic program
+    class Program //class that holds main
     {
         static void Main(string[] args)
         {
            Console.WriteLine("Welcome!");
-           LinkedList<Matrix> Memory = new LinkedList<Matrix>();
+           LinkedList<Matrix> Memory = new LinkedList<Matrix>(); //a linked list of matrices in memory
            bool running = true;
-           while(running){
+           while(running){ //loop that runs program
                int rows, columns;
                Console.WriteLine("What would you like to do");
                string option = Console.ReadLine();
@@ -22,10 +22,10 @@ namespace MatrixCalc //name of project
                         Console.WriteLine("what is the dimensions row x columns");
                         rows = Convert.ToInt32(Console.ReadLine());
                         columns = Convert.ToInt32(Console.ReadLine());
-                        Matrix matrix = new Matrix(rows, columns);
-                        matrix.setName(newMatrixName);
+                        Matrix matrix = new Matrix(rows, columns); //makes new instance of matrix with dimenstions r x c
+                        matrix.setName(newMatrixName); //gives it a name to find in memory
                         Console.WriteLine("new matrix {0} created", matrix.getName());
-                        Memory.AddFirst(matrix);
+                        Memory.AddFirst(matrix); //adds new matrix to front of Memory
                         Console.WriteLine("Memory now contains {0} Matrices", Memory.Count);
                         matrix.PrintM();
                         break;
@@ -34,8 +34,8 @@ namespace MatrixCalc //name of project
                         string MatrixName = Console.ReadLine();
                         bool found = false;
                         foreach(Matrix m in Memory){
-                            if(m.getName() == MatrixName){
-                                int sum = m.SummingDiagnals();
+                            if(m.getName() == MatrixName){ //searches memory for a matrix with a matching name
+                                int sum = m.SummingDiagnals(); //calls Summing Diagnals from MatrixClass.cs
                                 Console.WriteLine("Sum of diagonals = {0}", sum);
                                 found = true;
                             }
@@ -49,9 +49,9 @@ namespace MatrixCalc //name of project
                         string MatrixToPopulate = Console.ReadLine();
                         foreach(Matrix m in Memory){
                         if(m.getName() == MatrixToPopulate){
-                            m.Populate();
+                            m.Populate(); //in MatrixClass.cs
                             Console.WriteLine("Printing populated matrix");
-                            m.PrintM();
+                            m.PrintM(); //prints matrix found in Matrix.cs
                             }
                         }
                         break;
