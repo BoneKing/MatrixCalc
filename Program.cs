@@ -2,7 +2,7 @@
 using System.Collections; 
 using System.Collections.Generic; 
 
-namespace C_sharp_learning //name of project
+namespace MatrixCalc //name of project
 {
     class Program //class that contains everything, since this is a very basic program
     {
@@ -51,7 +51,7 @@ namespace C_sharp_learning //name of project
            }
         }
     }
-
+    /*
     class Matrix
     {
         int[,]m;
@@ -104,4 +104,5 @@ namespace C_sharp_learning //name of project
             }
         }
     }
+    */
 }
