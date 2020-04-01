@@ -9,6 +9,7 @@ namespace MatrixCalc //name of project
         static void Main(string[] args)
         {
            Console.WriteLine("Welcome!");
+           Console.WriteLine("Please type help to get a list of commands if you get confused!");
            LinkedList<Matrix> Memory = new LinkedList<Matrix>(); //a linked list of matrices in memory
            bool running = true;
            while(running){ //loop that runs program
@@ -64,6 +65,14 @@ namespace MatrixCalc //name of project
                             m.PrintM();
                             }
                         }
+                        break;
+                    case "help":
+                        Console.WriteLine("The options you can do are:");
+                        Console.WriteLine("Create Matrix - Allows you to make a new matrix");
+                        Console.WriteLine("Populate - allows user to fill in integer values for a given matrix");
+                        Console.WriteLine("Sum Diagnals - sums the diagnal of a nxn matrix");
+                        Console.WriteLine("Display Matrix - prints a given matrix to the screen");
+                        Console.WriteLine("Quit - Exits the program");
                         break;
                     case "Quit":
                         running = false;
