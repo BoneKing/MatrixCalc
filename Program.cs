@@ -55,6 +55,16 @@ namespace MatrixCalc //name of project
                             }
                         }
                         break;
+                    case "Display Matrix":
+                        Console.WriteLine("What is the name of the matrix you wish to display?");
+                        string MatrixToDisplay = Console.ReadLine();
+                        foreach(Matrix m in Memory){
+                        if(m.getName() == MatrixToDisplay){
+                            Console.WriteLine("*Printing Matrix {0}*", MatrixToDisplay);
+                            m.PrintM();
+                            }
+                        }
+                        break;
                     case "Quit":
                         running = false;
                         break;
