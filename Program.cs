@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections; 
+using System.Collections.Generic; 
 
 namespace C_sharp_learning //name of project
 {
@@ -6,17 +8,11 @@ namespace C_sharp_learning //name of project
     {
         static void Main(string[] args)
         {
-           Console.WriteLine("Welcome! Please input the dimensions for your matrix first the number of rows, then the number of columns: \n");
-           int rows = Convert.ToInt32(Console.ReadLine());
-           int columns = Convert.ToInt32(Console.ReadLine());
-           Matrix M = new Matrix(rows, columns);
-
-           Console.WriteLine("printing Matrix\n");
-           M.PrintM();
-           Console.WriteLine("Matrix Printed");
-           Console.ReadLine();
+           Console.WriteLine("Welcome!");
+           LinkedList<Matrix> Memory = new LinkedList<Matrix>();
            bool running = true;
            while(running){
+               int rows, columns;
                Console.WriteLine("What would you like to do");
                string option = Console.ReadLine();
                switch(option){
@@ -29,12 +25,24 @@ namespace C_sharp_learning //name of project
                         Matrix matrix = new Matrix(rows, columns);
                         matrix.setName(newMatrixName);
                         Console.WriteLine("new matrix {0} created", matrix.getName());
+                        Memory.AddFirst(matrix);
+                        Console.WriteLine("Memory now contains {0} Matrices", Memory.Count);
                         matrix.PrintM();
                         break;
                     case "Sum Diagnals":
                         Console.WriteLine("What's the name of the matrix?");
                         string MatrixName = Console.ReadLine();
-                        //Console.WriteLine(Convert.ToString(MatrixName.SummingDiagnals()));
+                        bool found = false;
+                        foreach(Matrix m in Memory){
+                            if(m.getName() == MatrixName){
+                                int sum = m.SummingDiagnals();
+                                Console.WriteLine("Sum of diagonals = {0}", sum);
+                                found = true;
+                            }
+                        }
+                        if(found == false){
+                            Console.WriteLine("No matrix found with name: {0}", MatrixName);
+                        }
                         break;
                     case "Quit":
                         running = false;
