@@ -53,5 +53,13 @@ namespace MatrixCalc
                 return -2;
             }
         }
+        public void Populate(){
+            for(int i =0; i<r;i++){
+                Console.WriteLine("enter the entries for row number {0} seperated by enter",i+1);
+                for(int j=0;j<c;j++){
+                    m[i,j] = Convert.ToInt32(Console.ReadLine());
+                }
+            }
+        }
     }
 }

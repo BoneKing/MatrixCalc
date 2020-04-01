@@ -44,6 +44,17 @@ namespace MatrixCalc //name of project
                             Console.WriteLine("No matrix found with name: {0}", MatrixName);
                         }
                         break;
+                    case "Populate":
+                        Console.WriteLine("What is the name of the matrix you wish to populate?");
+                        string MatrixToPopulate = Console.ReadLine();
+                        foreach(Matrix m in Memory){
+                        if(m.getName() == MatrixToPopulate){
+                            m.Populate();
+                            Console.WriteLine("Printing populated matrix");
+                            m.PrintM();
+                            }
+                        }
+                        break;
                     case "Quit":
                         running = false;
                         break;
