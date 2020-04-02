@@ -77,6 +77,9 @@ namespace MatrixCalc //name of project
                     case "Quit":
                         running = false;
                         break;
+                    default:
+                        Console.WriteLine("INVALID COMMAND");
+                        break;
                }
            }
         }
