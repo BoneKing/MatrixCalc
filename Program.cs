@@ -26,7 +26,7 @@ namespace MatrixCalc //name of project
                         Matrix matrix = new Matrix(rows, columns); //makes new instance of matrix with dimenstions r x c
                         matrix.setName(newMatrixName); //gives it a name to find in memory
                         Console.WriteLine("new matrix {0} created", matrix.getName());
-                        Memory.AddFirst(matrix); //adds new matrix to front of Memory
+                        Memory.AddLast(matrix); //adds new matrix to front of Memory
                         Console.WriteLine("Memory now contains {0} Matrices", Memory.Count);
                         matrix.PrintM();
                         break;
@@ -66,12 +66,20 @@ namespace MatrixCalc //name of project
                             }
                         }
                         break;
+                    case "List Matrices":
+                        foreach(Matrix m in Memory){
+                            Console.WriteLine("{0}:", m.getName());
+                            m.PrintM();
+                            Console.WriteLine('\n');
+                        }
+                        break;
                     case "help":
                         Console.WriteLine("The options you can do are:");
                         Console.WriteLine("Create Matrix - Allows you to make a new matrix");
                         Console.WriteLine("Populate - allows user to fill in integer values for a given matrix");
                         Console.WriteLine("Sum Diagnals - sums the diagnal of a nxn matrix");
                         Console.WriteLine("Display Matrix - prints a given matrix to the screen");
+                        Console.WriteLine("List Matrices - Prints all of the Matrices in Memory");
                         Console.WriteLine("Quit - Exits the program");
                         break;
                     case "Quit":
