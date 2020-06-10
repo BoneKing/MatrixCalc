@@ -50,6 +50,7 @@ namespace MatrixCalc
             }
             else{
                 Console.WriteLine("unknown error summing diagnals");
+                //if you hit here I don't know what happened or what you did
                 return -2;
             }
         } 

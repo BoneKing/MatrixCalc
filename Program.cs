@@ -29,6 +29,11 @@ namespace MatrixCalc //name of project
                         Memory.AddLast(matrix); //adds new matrix to front of Memory
                         Console.WriteLine("Memory now contains {0} Matrices", Memory.Count);
                         matrix.PrintM();
+                        Console.WriteLine("Would you like to populate this Matrix now? [y/n]");
+                        string popu = Console.ReadLine();
+                        if(popu == "y" || popu == "Y"){
+                            matrix.Populate();
+                        }
                         break;
                     case "Sum Diagnals":
                         Console.WriteLine("What's the name of the matrix?");
