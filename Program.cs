@@ -41,7 +41,7 @@ namespace MatrixCalc //name of project
                         bool found = false;
                         foreach(Matrix m in Memory){
                             if(m.getName() == MatrixName){ //searches memory for a matrix with a matching name
-                                int sum = m.SummingDiagnals(); //calls Summing Diagnals from MatrixClass.cs
+                                string sum = m.SummingDiagnals(); //calls Summing Diagnals from MatrixClass.cs
                                 Console.WriteLine("Sum of diagonals = {0}", sum);
                                 found = true;
                             }
